@@ -1,0 +1,74 @@
+.home {
+    h1 { font-size: 20px; line-height:1.3em;}
+    background-color: #000;
+    color: #fff;
+    .main {
+        width: auto;
+        margin: 0;
+        padding: 80px 15px;
+        background-color: rgba(0, 0, 0, 0.5);
+        @media screen and (min-width: 768px) {
+            width: 360px;
+            margin-right: 100px;
+            float: right;
+            margin: 90px 100px 0 0;
+        }
+    }
+
+    .content {
+        border-top: 4px solid #00aae7;
+        border-bottom: 4px solid #00aae7;
+        margin-bottom: 35px;
+    }
+
+    .login {
+        margin-bottom: 20px;
+    }
+
+    .contact p {
+        margin: 0;
+    }
+
+    .btn {
+        background-color: #00aae7;
+        font-size: 18px;
+        line-height: 18px;
+        padding: 8px 50px 8px 14px;
+        border-radius: 3px;
+        color: #fff;
+        text-decoration: none;
+        font-family: valuesans, Arial, sans-serif;
+        display: inline-block;
+        background-image: url(../images/arrow.png);
+        background-position: 238px 8px;
+        background-repeat: no-repeat;
+        width: 205px;
+    }
+
+    .site-container {
+        background-image: url(../images/techilife-bg.jpg);
+        background-position:center 44px;
+        @include background-size(contain);
+        background-repeat: no-repeat;
+        @media screen and (min-width:768px) {
+            @include background-size(cover);
+            background-position: center center;
+        }
+    }
+
+    .btn:hover {
+        background-color: #fff;
+        color: #00aae7;
+        background-position: 238px -11px;
+    }
+}
+
+.lt-ie9 {
+    .home .main {
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=1, StartColorStr='#7F000000', EndColorStr='#7F000000')";
+        filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#7F000000', EndColorStr='#7F000000');
+        zoom: 1!important;
+        position:relative;
+        z-index:100;
+    }
+}

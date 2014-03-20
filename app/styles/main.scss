@@ -1,0 +1,174 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass/reset";
+@import "compass/css3";
+@import "home", "ie";
+
+$navbarWidth : 255px;
+
+body {
+    background-color: #fff;
+    font-family: Helvetica-neue, arial, sans-serif;
+    font-size: 18px;
+    color: #000;
+    font-family: streuthlight, Arial, sans-serif;
+    line-height: 1.3;
+}
+
+::selection {
+    color: #00aae7;
+    background: #000;
+}
+
+::-moz-selection {
+    color: #00aae7;
+    background: #000;
+    }
+
+h1 {
+    font-size: 1.9em;
+    font-weight: normal;
+    font-family: streuth, Arial, sans-serif;
+    margin: 0.67em 0;
+    line-height:1em;
+}
+
+h2 {
+    font-size: 86px;
+    font-family: valuesans, Arial, sans-serif;
+    font-weight: normal;
+    line-height: 60px;
+    margin: 20px 0;
+}
+
+h3 {
+    font-weight: normal;
+    margin: 0;
+    font-family: streuth, Arial, sans-serif;
+    font-size: 20px;
+}
+
+p {
+    line-height: 1.3;
+    margin: 1em 0;
+}
+
+.logo {
+    margin:1em 0;
+    img {
+        margin:auto; display:block;
+    }
+}
+
+@include font-face("valuesans", font-files("value-sans-webfont.eot", "value-sans-webfont.ttf", "value-sans-webfont.svg#valuesans"));
+
+@include font-face("streuth", font-files("streuth-webfont.eot", "streuth-webfont.eot#iefix", "streuth-webfont.woff", "streuth-webfont.ttf", "streuth-webfont.svg#streuthregular"));
+
+@include font-face("streuthlight", font-files("streuthlight-webfont.eot", "steruthlight-webfont.eot?#iefix", "streuthlight-webfont.woff", "streuthlight-webfont.ttf", "struethlight-webfont.svg#streuthlight"));
+
+.nav-bar {
+    width:$navbarWidth;
+    position:fixed;
+    z-index:20;
+    top:0px;
+    left:-100%;
+    background:#15171a;
+    @include transition-property(all);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease-out);
+
+    @media screen and (min-width:768px) {
+        left:0;
+        height:100%;
+    }
+}
+.nav {
+    height:auto;
+    width:100%;
+    li {
+        background:image-url('arrow.png') no-repeat 10px 10px;
+        border-top:1px solid #303030;
+        border-bottom:1px solid #1d1d1d;
+        &:hover, &:active {
+            background-position:10px -72px;
+        }
+        > a {
+            padding: 10px 4% 10px 17%;
+            display:block;
+            text-align:left;
+            text-decoration: none;
+            font-family: streuthlight, Arial,sans-serif;
+            color:#9f9f9f;
+            font-size:14px;
+            text-shadow:1px 1px 1px rgba(0,0,0,0.48); 
+        }
+    }
+}
+
+.site-container {
+    position:relative;
+    left:0;
+    z-index:10;
+    @include transition-property(left);
+    @include transition-duration(0.3s);
+    @include transition-timing-function(ease-out);
+    @media screen and (min-width:768px) {
+        left:$navbarWidth;
+    }
+}
+
+.nav-opened {
+    .nav-bar {
+        left:0;
+    }
+    .site-container {
+        left: $navbarWidth;
+    }
+}
+.main {
+    width: auto;
+    margin: 0;
+    padding: 0px 15px 80px;
+    @media screen and (min-width: 768px) {
+        width: 90%;
+        margin:0 2%;
+        padding:0;
+    }
+}
+.mobile-bar {
+    background-color:#131313;
+    position:relative;
+    z-index: 999;
+    height:44px;
+    width:100%;
+    min-width:320px;
+    display:block;
+    @media screen and (min-width:768px) {
+        display:none;
+    }
+    .menu-link {
+        float:left;
+        position:relative;
+        left:7px;
+        top:7px;
+        width:49px;
+        height:29px;
+        z-index: 999;
+    }
+    .menu-title {
+        position:relative;
+        margin:0 auto;
+        text-align: center;
+        img {
+            width:40%;
+            position: relative;
+            top:4px;
+        }
+    }
+}
+.list {
+    padding-left:20px;
+    list-style-type:disc;
+}
